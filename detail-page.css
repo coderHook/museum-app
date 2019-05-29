@@ -10,14 +10,19 @@ body {
 
 main {
     background: white;
-    width: 90%;
-    margin: auto;
+    width: 80%;
+    margin: 0 auto;
     border-radius: 5px;
-    padding: 2rem 0;
+    padding: 2rem 2rem;
 }
 
 section {
     display: block;
+    margin: 0 auto;
+}
+
+img {
+    width: 60%;
 }
 
 .comment {
@@ -28,10 +33,6 @@ section {
     border-radius: 5px;
 }
 
-.formSection {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-}
 
 form {
     max-width: 50%;
@@ -42,12 +43,21 @@ form {
     display: block;
 }
 
+.formSection {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    max-width: 80%;
+    min-width: 15rem;
+    margin: 2rem auto;
+}
+
+
 label {
     display: inline-block;
     width: 80%
 }
 
-input {
+input, textarea {
     width: 80%;
     box-sizing: border-box;
     border: 1px solid #999;
@@ -55,11 +65,17 @@ input {
     font-size: 1.2rem;
 }
 
+(input, textarea):hover {
+    border: 1px solid orange;
+}
+
 button {
     background: black;
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1rem;
     border: none;
     border-radius: 5px;
-    margin-bottom: 5%;
+    margin-bottom: 8%;
+    font-size: 1.2rem;
+    width: 65%
 }
