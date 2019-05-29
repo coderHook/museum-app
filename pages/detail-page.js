@@ -3,23 +3,15 @@
 /* A user can leave their name and write a comment, when they click submit, 
 their name and comment will be displayed on the page. */
 
-/*  -Add an event (name and comment) listener/handler to the button
-    - Gather data of the input fields
-    - Create some elements (to display the data)
-    - Adjust the elements so they display the data
-    - Display the adjusted elements on your page
-    - Empty the input fields so the next user can type some new text. */
-
 
 function submitComment() {
-    console.log('Hello');
     const inputField = document.querySelector('#name');
     const textArea = document.querySelector('#msg');
     const name = inputField.value;
     const msg = textArea.value;
 
-    //Call the function to add comments.
-    insertComment(name, msg);
+    //Validate the data entered:
+    validations(name, msg);
 
     //Reset values
     inputField.value = null;
@@ -34,7 +26,7 @@ function insertComment(name, msg) {
     const p = document.createElement('p');
     
     h3.innerHTML = `${name} said:`;
-    p.innerHTML = ` ${msg}`;
+    p.innerHTML = `\"${msg}\"`;
 
     comment.classList.add('comment');
     comment.appendChild(h3);
@@ -44,3 +36,18 @@ function insertComment(name, msg) {
     commentSection.appendChild(comment);
 
 }
+
+//Validating
+
+function validations(name, msg) {
+    if(!name || !msg) {
+        alert('Name and message must be filled to submit a comment.');
+    } else if (msg.length > 280) { 
+        alert("Your Comment is too Long, Please do not exceed 280 characters!")  
+    } else {
+        //Call the function to add comments.
+        insertComment(name, msg);
+    }
+    
+}
+
