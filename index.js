@@ -352,6 +352,7 @@ for (let i=0; i < paintings.length; i++) {
     let img_width = paintings[i].webImage.width;
     let author = paintings[i].principalOrFirstMaker;
     let year_created = paintings[i].longTitle.split(' ');
+    let id = paintings[i].id;
 
     year_created = year_created[year_created.length -1];
 
@@ -360,15 +361,24 @@ for (let i=0; i < paintings.length; i++) {
     let meet_requirements = requirements(img_width, author, year_created);
     console.log(meet_requirements);
 
-    if (meet_requirements) { add_img(src, alt); }
+    if (meet_requirements) { 
+        add_img(src, alt, id); 
+        
+    }
+
+
 }
+
+// Lets get the ID to pass it to our details page.
+
+
 
 
 /* --------------------------- Functions ----------------------- */
 
-function add_img(src, alt) {
+function add_img(src, alt, id) {
 
-    let p = `<a href="./pages/detail-page.html">
+    let p = `<a href="./pages/detail-page.html?${id}" onclick="gettingId(this.id)" id="${id}">
                 <img class="artObject" src="${src}" alt="${alt}">
             </a>
             `
@@ -384,3 +394,9 @@ function requirements(width, author, year_created){
     if(width < 500 || honthorst || year_created > 1800) { return false; } 
     else { return true}
 }
+
+function gettingId(clicked_id) {
+    return clicked_id;
+}
+
+module.exports.gettingId = gettingId;
