@@ -58,21 +58,34 @@ form {
 label {
     font-family: 'Inconsolata', monospace;
     display: inline-block;
-    width: 80%
+    width: 80%;
+    font-weight: bold
+
 }
 
-input, textarea {
+input[type="text"], textarea {
     font-family: 'Inconsolata', monospace;
     width: 80%;
     box-sizing: border-box;
     border: 1px solid #999;
     min-height: 2rem;
     font-size: 1.2rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black
 }
 
-(input, textarea):hover {
-    border: 1px solid orange;
+input:hover, textarea:hover {
+    border: none;
+    border-bottom: 3px solid orange;
 }
+
+input:focus, textarea:focus {
+    border-bottom: 3px solid orange;
+}
+
+
+
 
 button {
     font-family: 'Inconsolata', monospace;
@@ -84,4 +97,15 @@ button {
     margin-bottom: 8%;
     font-size: 1.2rem;
     width: 65%
+}
+
+.home {
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black
+}
+
+.home:hover {
+    font-size: 1.6rem
 }
