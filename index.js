@@ -352,7 +352,6 @@ for (let i=0; i < paintings.length; i++) {
     let img_width = paintings[i].webImage.width;
     let author = paintings[i].principalOrFirstMaker;
     let year_created = paintings[i].longTitle.split(' ');
-    let id = paintings[i].id;
 
     year_created = year_created[year_created.length -1];
 
@@ -362,7 +361,7 @@ for (let i=0; i < paintings.length; i++) {
     console.log(meet_requirements);
 
     if (meet_requirements) { 
-        add_img(src, alt, id); 
+        add_img(src, alt, i); 
         
     }
 
@@ -376,9 +375,9 @@ for (let i=0; i < paintings.length; i++) {
 
 /* --------------------------- Functions ----------------------- */
 
-function add_img(src, alt, id) {
+function add_img(src, alt, position) {
 
-    let p = `<a href="./pages/detail-page.html?${id}" id="${id}">
+    let p = `<a href="./pages/detail-page.html?${position}">
                 <img class="artObject" src="${src}" alt="${alt}">
             </a>
             `

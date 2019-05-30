@@ -4,61 +4,6 @@
 their name and comment will be displayed on the page. */
 
 // -----------Feeding the page -----------------------------//
-import gettingId from '../index.js'
-
-console.log(gettingId);
-
-
-/* ---------- F U N C T I O N S ------------------*/
-/* Adding comments */
-function submitComment() {
-    const inputField = document.querySelector('#name');
-    const textArea = document.querySelector('#msg');
-    const name = inputField.value;
-    const msg = textArea.value;
-
-    //Validate the data entered:
-    validations(name, msg);
-
-    //Reset values
-    inputField.value = null;
-    textArea.value = null;
-    
-}
-
-//Inserting comments.
-function insertComment(name, msg) {
-    const comment = document.createElement('section');
-    const h3 = document.createElement('h3');
-    const p = document.createElement('p');
-    
-    h3.innerHTML = `${name} said:`;
-    p.innerHTML = `\"${msg}\"`;
-
-    comment.classList.add('comment');
-    comment.appendChild(h3);
-    comment.appendChild(p);
-
-    const commentSection = document.getElementById('comments');
-    commentSection.appendChild(comment);
-
-}
-
-//Validating
-
-function validations(name, msg) {
-    if(!name || !msg) {
-        alert('Name and message must be filled to submit a comment.');
-    } else if (msg.length > 280) { 
-        alert("Your Comment is too Long, Please do not exceed 280 characters!")  
-    } else {
-        //Call the function to add comments.
-        insertComment(name, msg);
-    }
-    
-}
-
-
 /* --- Getting data and feeding the page --- */
 const data = {
     elapsedMilliseconds: 0,
@@ -385,4 +330,69 @@ const data = {
       }
     ]
   }
+
+
+let position = window.location.href.split('?');
+position = position[position.length - 1];
+
+let title = document.querySelector('#title')
+
+let title_text = data.artObjects[position].title;
+console.log(data.artObjects[position])
+
+title.append(title_text);
+
+let src = data.artObjects[position].webImage.url;
+let html = `<img src="${src}"></img>`;
+title.insertAdjacentHTML('afterend', html)
+
+/* ---------- F U N C T I O N S ------------------*/
+/* Adding comments */
+function submitComment() {
+    const inputField = document.querySelector('#name');
+    const textArea = document.querySelector('#msg');
+    const name = inputField.value;
+    const msg = textArea.value;
+
+    //Validate the data entered:
+    validations(name, msg);
+
+    //Reset values
+    inputField.value = null;
+    textArea.value = null;
+    
+}
+
+//Inserting comments.
+function insertComment(name, msg) {
+    const comment = document.createElement('section');
+    const h3 = document.createElement('h3');
+    const p = document.createElement('p');
+    
+    h3.innerHTML = `${name} said:`;
+    p.innerHTML = `\"${msg}\"`;
+
+    comment.classList.add('comment');
+    comment.appendChild(h3);
+    comment.appendChild(p);
+
+    const commentSection = document.getElementById('comments');
+    commentSection.appendChild(comment);
+
+}
+
+//Validating
+
+function validations(name, msg) {
+    if(!name || !msg) {
+        alert('Name and message must be filled to submit a comment.');
+    } else if (msg.length > 280) { 
+        alert("Your Comment is too Long, Please do not exceed 280 characters!")  
+    } else {
+        //Call the function to add comments.
+        insertComment(name, msg);
+    }
+    
+}
+
 
