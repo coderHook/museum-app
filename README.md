@@ -1,5 +1,11 @@
 # Museum App
 
+View of the Project:
+
+[Index.html](../images/readme/index.png)
+[detail-page(1-2).html](../images/readme/detail1.png)
+[detail-page(2-2)](../images/readme/detail2.png)
+
 Learnings of this project:
 
 ## HTML, DevTools, Git
