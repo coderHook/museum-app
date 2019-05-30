@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+/* Dataset containing all the  Data we need for the APP */
+
+=======
+>>>>>>> master
 const data = {
     elapsedMilliseconds: 0,
     count: 359,
@@ -322,4 +327,41 @@ const data = {
         productionPlaces: [ ]
       }
     ]
+<<<<<<< HEAD
   }
+
+  /* ------------------------ End of DataSet ------------- */
+
+let paintings = data.artObjects
+
+/* -------------------------------------------- 
+Use DOM methods to create some HTML code for each element in the array. The resulting HTML code should look something like this:
+<a href="./pages/detail-page.html">
+  <img alt=_title_of_painting_ class="artObject" src=_url_of_web_image_ />
+</a>
+
+----------------------------------------------- */
+
+/* Lets select the part of the html code on we are going to
+append our new object */
+
+let gallery = document.getElementById('gallery');
+
+/* Lets get the elements we need from the Dataset */
+
+
+
+for (let i=0; i < paintings.length; i++) {
+    let src = paintings[i].webImage.url;
+    let alt = paintings[i].title;
+
+    let p = `<a href="./pages/detail-page.html">
+                <img class="artObject" src="${src}" alt="${alt}">
+            </a>
+            `
+
+    gallery.insertAdjacentHTML( 'beforeend', p );
+}
+=======
+  }
+>>>>>>> master
