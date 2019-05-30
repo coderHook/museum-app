@@ -360,15 +360,24 @@ for (let i=0; i < paintings.length; i++) {
     let meet_requirements = requirements(img_width, author, year_created);
     console.log(meet_requirements);
 
-    if (meet_requirements) { add_img(src, alt); }
+    if (meet_requirements) { 
+        add_img(src, alt, i); 
+        
+    }
+
+
 }
+
+// Lets get the ID to pass it to our details page.
+
+
 
 
 /* --------------------------- Functions ----------------------- */
 
-function add_img(src, alt) {
+function add_img(src, alt, position) {
 
-    let p = `<a href="./pages/detail-page.html">
+    let p = `<a href="./pages/detail-page.html?${position}">
                 <img class="artObject" src="${src}" alt="${alt}">
             </a>
             `
