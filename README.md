@@ -2,9 +2,9 @@
 
 View of the Project:
 
-[Index.html]: (https://github.com/coderHook/museum-app/blob/master/images/readme/index.png)
-[detail-page(1-2).html]: (https://github.com/coderHook/museum-app/blob/master/images/readme/detail1.png)
-[detail-page(2-2)]: (https://github.com/coderHook/museum-app/blob/master/images/readme/detail2.png)
+![Index](https://github.com/coderHook/museum-app/blob/master/images/readme/index.png)
+![detail-page(1-2)](https://github.com/coderHook/museum-app/blob/master/images/readme/detail1.png)
+![detail-page(2-2)](https://github.com/coderHook/museum-app/blob/master/images/readme/detail2.png)
 
 Learnings of this project:
 
