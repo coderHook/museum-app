@@ -378,7 +378,7 @@ for (let i=0; i < paintings.length; i++) {
 
 function add_img(src, alt, id) {
 
-    let p = `<a href="./pages/detail-page.html?${id}" onclick="gettingId(this.id)" id="${id}">
+    let p = `<a href="./pages/detail-page.html?${id}" id="${id}">
                 <img class="artObject" src="${src}" alt="${alt}">
             </a>
             `
@@ -394,9 +394,3 @@ function requirements(width, author, year_created){
     if(width < 500 || honthorst || year_created > 1800) { return false; } 
     else { return true}
 }
-
-function gettingId(clicked_id) {
-    return clicked_id;
-}
-
-module.exports.gettingId = gettingId;
