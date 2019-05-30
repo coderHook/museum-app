@@ -344,11 +344,29 @@ let gallery = document.getElementById('gallery');
 
 /* Lets get the elements we need from the Dataset */
 
-
+console.log(paintings[0]);
 
 for (let i=0; i < paintings.length; i++) {
     let src = paintings[i].webImage.url;
     let alt = paintings[i].title;
+    let img_width = paintings[i].webImage.width;
+    let author = paintings[i].principalOrFirstMaker;
+    let year_created = paintings[i].longTitle.split(' ');
+
+    year_created = year_created[year_created.length -1];
+
+    console.log(img_width + ": " + author);
+
+    let meet_requirements = requirements(img_width, author, year_created);
+    console.log(meet_requirements);
+
+    if (meet_requirements) { add_img(src, alt); }
+}
+
+
+/* --------------------------- Functions ----------------------- */
+
+function add_img(src, alt) {
 
     let p = `<a href="./pages/detail-page.html">
                 <img class="artObject" src="${src}" alt="${alt}">
@@ -358,3 +376,11 @@ for (let i=0; i < paintings.length; i++) {
     gallery.insertAdjacentHTML( 'beforeend', p );
 }
 
+function requirements(width, author, year_created){
+
+    let honthorst = author.search('Honthorst') > 0 ? true : false;
+    console.log('isHont: ' + honthorst);
+
+    if(width < 500 || honthorst || year_created > 1800) { return false; } 
+    else { return true}
+}
