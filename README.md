@@ -4,6 +4,9 @@ View of the Project:
 
 ![Index](https://github.com/coderHook/museum-app/blob/master/images/readme/index.png)
 ![detail-page(1-2)](https://github.com/coderHook/museum-app/blob/master/images/readme/detail1.png)
+
+- Form on users can add their comments:
+
 ![detail-page(2-2)](https://github.com/coderHook/museum-app/blob/master/images/readme/detail2.png)
 
 Learnings of this project:
