@@ -1,3 +1,5 @@
+
+
 body {
     background-color: #FFBA00;
     font-family: 'Inconsolata', monospace;
@@ -35,6 +37,7 @@ img {
 
 
 form {
+    font-family: 'Inconsolata', monospace;
     max-width: 50%;
     min-width: 15rem;
     margin: 1rem auto;
@@ -53,11 +56,13 @@ form {
 
 
 label {
+    font-family: 'Inconsolata', monospace;
     display: inline-block;
     width: 80%
 }
 
 input, textarea {
+    font-family: 'Inconsolata', monospace;
     width: 80%;
     box-sizing: border-box;
     border: 1px solid #999;
@@ -70,6 +75,8 @@ input, textarea {
 }
 
 button {
+    font-family: 'Inconsolata', monospace;
+
     background: black;
     color: white;
     padding: 1rem 1rem;
