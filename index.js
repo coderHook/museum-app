@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 /* Dataset containing all the  Data we need for the APP */
 
+=======
+>>>>>>> master
 const data = {
     elapsedMilliseconds: 0,
     count: 359,
@@ -324,6 +327,7 @@ const data = {
         productionPlaces: [ ]
       }
     ]
+<<<<<<< HEAD
   }
 
   /* ------------------------ End of DataSet ------------- */
@@ -358,3 +362,6 @@ for (let i=0; i < paintings.length; i++) {
 
     gallery.insertAdjacentHTML( 'beforeend', p );
 }
+=======
+  }
+>>>>>>> master
